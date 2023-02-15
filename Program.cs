@@ -21,6 +21,7 @@ static bool IsValidOption(ref int option){
         return true;
     }
     else {
+        System.Console.WriteLine("Invalid Choice, please try again:");
         return false;
     }
 }
@@ -37,8 +38,8 @@ static void Triangle(int option){
 
 static void GetFull(){
     Random rnd = new Random();
-    int row = rnd.Next(3,9);
-    System.Console.WriteLine("Number of rows: " + row);
+    int row = rnd.Next(3,10); //generates a random number in the range 3 to 9
+    System.Console.WriteLine("Full Triange; Random number of rows: " + row);
 
     for (int i = 0; i <= row; i++){
         for (int j = 0; j < i; j++){
@@ -50,16 +51,16 @@ static void GetFull(){
 
 static void GetPartial(){
     Random rnd = new Random();
-    int row = rnd.Next(3,9);
-    System.Console.WriteLine("Number of rows: "+ row);
+    int row = rnd.Next(3,10); //generates a random number in the range 3 to 9
+    System.Console.WriteLine("Partial Triangle; Random number of rows: "+ row);
 
     for (int i = 0; i <= row; i++){
         Random rndm = new Random();
-        int num = rndm.Next(2);
+        int num = rndm.Next(2); //generates a random number 0 or 1
 
         for (int j = 0; j < i; j++){
             if(num == 1){
-                System.Console.Write("O ");
+                System.Console.Write("O "); 
                 num = rndm.Next(2);
             }
             else{
